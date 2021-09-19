@@ -15,13 +15,11 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function countCats(matrix) {
-  let count = 0;
-  for (let row of matrix) {
-    for (let col of row) {
-      if (col === '^^') {
-        count++;
-      }
+  let i=0
+  for(let i2=0;i2<matrix.length;i2++){
+    for(let i3=0;i3<matrix[i2].length;i3++){
+      if (matrix[i2][i3]=='^^'){i++}
     }
   }
-  return count;
+ return i
 }

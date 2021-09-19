@@ -14,7 +14,12 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam(members) {
-    let capitalized = members.map(w => w.charAt(0).toUpperCase());
-    let aaa = capitalized.sort().join('');
-    return aaa
+    let team=[]
+    if(members==null){return false} 
+        for (let i=0;i<members.length;i++){   
+    if (typeof members[i]=="string"){    
+    team.push(members[i].replace(/ /g,"").slice(0,1).toUpperCase())
+        }  
+    }
+    return team.sort().join("")
 }
