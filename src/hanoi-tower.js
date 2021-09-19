@@ -14,7 +14,14 @@ import { NotImplementedError } from '../extensions/index.js';
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
  *
  */
-export default function calculateHanoi(/* disksNumber, turnsSpeed */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function calculateHanoi(disksNumber, turnsSpeed) {
+    let turns=2**disksNumber-1
+    let speed=turnsSpeed/3600
+    let sec=Math.floor(turns/speed)
+    let solution= new Hanoi(turns,sec)
+    return solution
+}
+function Hanoi(tur,sec) {
+  this.turns=tur
+  this.seconds=sec
 }

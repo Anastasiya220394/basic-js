@@ -23,5 +23,5 @@ export default function getSeason(date) {
   } else if (date.getMonth() === 8 || date.getMonth() === 9 || date.getMonth() === 10) {
     return 'autumn'
   }
-  
+
 }
