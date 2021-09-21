@@ -10,7 +10,7 @@ import { NotImplementedError } from '../extensions/index.js';
  * For aabbbc should return 2a3bc
  *
  */
-export default function encodeLine(/* str */) {
+export default function encodeLine(str) {
   let arr = []
   let count = 1
   for (let i = 0; i < str.length; i++) {
