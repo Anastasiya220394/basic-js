@@ -12,16 +12,22 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default function getSeason(date) {
-  if (Object.keys(date).length !== 0 || date.getFullYear() < 1970 || typeof(date) !== 'object') {
-    throw Error('Invalid date!')
-  } else if (date.getMonth() === 11 || date.getMonth() === 0 || date.getMonth() === 1) {
-    return 'winter'
-  } else if (date.getMonth() === 2 || date.getMonth() === 3 || date.getMonth() === 4) {
-    return 'spring'
-  } else if (date.getMonth() === 5 || date.getMonth() === 6 || date.getMonth() === 7) {
-    return 'summer'
-  } else if (date.getMonth() === 8 || date.getMonth() === 9 || date.getMonth() === 10) {
-    return 'autumn'
+  if (!date) return 'Unable to determine the time of year!';
+  if (!(date + '').includes('GMT')) throw new Error('Invalid date!');
+  if ((date + '') == new Date()) throw new Error('Invalid date!');
+  switch (date.getMonth()) {
+    case 11: return 'winter';
+    case 0: return 'winter';
+    case 1: return 'winter';
+    case 2: return 'spring';
+    case 3: return 'spring';
+    case 4: return 'spring';
+    case 5: return 'summer';
+    case 6: return 'summer';
+    case 7: return 'summer';
+    case 8: return 'fall';
+    case 9: return 'fall';
+    case 10: return 'fall';
+    default: break;
   }
-
 }
