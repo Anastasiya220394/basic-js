@@ -15,13 +15,13 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function calculateHanoi(disksNumber, turnsSpeed) {
-    let turns=2**disksNumber-1
-    let speed=turnsSpeed/3600
-    let sec=Math.floor(turns/speed)
-    let solution= new Hanoi(turns,sec)
-    return solution
+    let turns = 2**disksNumber-1;
+    let speed = turnsSpeed/3600;
+    let sec = Math.floor(turns/speed);
+    let result = new Hanoi(turns,sec);
+    return result
 }
 function Hanoi(tur,sec) {
-  this.turns=tur
-  this.seconds=sec
+  this.turns = tur;
+  this.seconds = sec;
 }

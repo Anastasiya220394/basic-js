@@ -16,32 +16,31 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function repeater(str, options) {
-  let newst=str
+  let newstr = str;
 
-  if (options["additionRepeatTimes"]==undefined){options.additionRepeatTimes=0}
-  if (options["RepeatTimes"]==undefined){options.RepeatTimes=0}
+  if (options["additionRepeatTimes"]==undefined) {options.additionRepeatTimes=0};
+  if (options["RepeatTimes"]==undefined) {options.RepeatTimes=0};
 
-  if(options["separator"]==undefined){   
+  if (options["separator"]==undefined) {   
     options.separator="+"
-    }
-  let add=""
+    };
+  let a = "";
 
 
 if(options["addition"]!==undefined){
     if(options["additionSeparator"]==undefined){options.additionSeparator="|"}
   
-  add+=options["addition"] 
- // console.log("add+aditonal="+add)
+  a+=options["addition"] 
   for(let j=1;j<options['additionRepeatTimes'];j++){
-    add+=options["additionSeparator"]+options["addition"]
+    a+=options["additionSeparator"]+options["addition"]
   }
 }  
-newst+=add
-let na=[]
-na.push(str+add)
+newstr+=a
+let arr = []
+arr.push(str+a)
 
   for(let i=1;i<options['repeatTimes'];i++){
-    na.push(str+add)       
+    arr.push(str+a)       
     }
-  return na.join(options.separator)
+  return arr.join(options.separator)
 }

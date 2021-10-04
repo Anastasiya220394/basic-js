@@ -14,12 +14,12 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam(members) {
-    let team=[]
+    let result = [];
     if(members==null){return false} 
         for (let i=0;i<members.length;i++){   
     if (typeof members[i]=="string"){    
-    team.push(members[i].replace(/ /g,"").slice(0,1).toUpperCase())
+        result.push(members[i].replace(/ /g,"").slice(0,1).toUpperCase())
         }  
     }
-    return team.sort().join("")
+    return result.sort().join("")
 }

@@ -16,9 +16,9 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function countCats(matrix) {
   let i=0
-  for(let i2=0;i2<matrix.length;i2++){
-    for(let i3=0;i3<matrix[i2].length;i3++){
-      if (matrix[i2][i3]=='^^'){i++}
+  for(let a=0;a<matrix.length;a++){
+    for(let b=0;b<matrix[a].length;b++){
+      if (matrix[a][b]=='^^'){i++}
     }
   }
  return i
